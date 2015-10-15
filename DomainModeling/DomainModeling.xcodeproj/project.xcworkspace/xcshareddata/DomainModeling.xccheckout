@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>214FF26A-E8B1-46F7-97B0-46A4F04AAB55</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>893D437FE85A11851CDFEE4105BD255CDFF6FAE7</key>
+		<string>https://github.com/AlexSchenck/DomainModeling-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DomainModeling/DomainModeling.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>893D437FE85A11851CDFEE4105BD255CDFF6FAE7</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AlexSchenck/DomainModeling-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>893D437FE85A11851CDFEE4105BD255CDFF6FAE7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>893D437FE85A11851CDFEE4105BD255CDFF6FAE7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gitalex</string>
+		</dict>
+	</array>
+</dict>
+</plist>
