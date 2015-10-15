@@ -112,20 +112,68 @@ class Person
     var firstName : String
     var lastName : String
     var age : Int
-    var job : Job
-    var spouse : Person
+    var job : Job?
+    var spouse : Person?
     
-    init(firstName : String, lastName : String, age : Int, job : Job, spouse : Person)
+    init(firstName : String, lastName : String, age : Int, job : Job?, spouse : Person?)
     {
         self.firstName = firstName
         self.lastName = lastName
         self.age = age
-        self.job = job
-        self.spouse = spouse
+        
+        if age < 16
+        {
+            self.job = nil
+            self.spouse = nil
+        }
+        else
+        {
+            self.job = job
+            
+            if age < 18
+            {
+                self.spouse = nil
+            }
+            else
+            {
+                self.spouse = spouse
+            }
+        }
     }
     
-    
+    // String representation of this person
+    func toString() -> String
+    {
+        var result : String = ""
+        result += "\(firstName) \(lastName) is \(age) years old.\n"
+        
+        if job == nil
+        {
+            result += "\(firstName) does not have a job.\n"
+        }
+        else
+        {
+            result += "\(firstName) is a \(job!.title).\n"
+        }
+        
+        if spouse == nil
+        {
+            result += "\(firstName) is single."
+        }
+        else
+        {
+            result += "\(firstName)'s spouse is \(spouse!.firstName) \(spouse!.lastName)."
+        }
+        
+        return result
+    }
 }
+
+// Test cases
+var Bob = Person(firstName: "Bob", lastName: "Smith", age: 45, job: nil, spouse: nil)
+var Mary = Person(firstName: "Mary", lastName: "Smith", age: 43, job: job1, spouse: Bob)
+
+println(Mary.toString())
 
 class Family
 {
