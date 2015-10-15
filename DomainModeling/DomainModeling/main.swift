@@ -9,22 +9,18 @@
 import Foundation
 
 // Currency enumeration, double values represent relative conversion rates
-enum Currency : Double {
+enum Currency : Double
+{
     case USD = 2
     case GBP = 1
     case EUR = 3
     case CAN = 2.5
 }
 
-struct Money {
+struct Money
+{
     var amount : Double
     var currency: Currency
-    
-    init(curr : Currency)
-    {
-        self.amount = 0
-        self.currency = curr
-    }
     
     init(amount : Double, curr : Currency)
     {
@@ -61,3 +57,77 @@ println(money1.convert(Currency.EUR))
 println(money2.convert(Currency.GBP))
 println(money1.mathOperation("add", otherMoney: money2))
 println(money2.mathOperation("subtract", otherMoney: money1))
+
+class Job
+{
+    var title : String
+    var salary : Double
+    var salaryIsPerHour : Bool
+    
+    init (title : String, salary : Double, salaryIsPerHour : Bool)
+    {
+        self.title = title
+        self.salary = salary
+        self.salaryIsPerHour = salaryIsPerHour
+    }
+    
+    // Returns calculated income based on given number of hours worked
+    // If this job's salary is per year, hours worked can be nil
+    func calculateIncome(hoursWorked : Double?) -> Double
+    {
+        if self.salaryIsPerHour == true
+        {
+            if hoursWorked != nil
+            {
+                return salary * hoursWorked!
+            }
+            else
+            {
+                return 0
+            }
+        }
+        else
+        {
+            return salary
+        }
+    }
+    
+    // Increases salary by given percentage and returns new salary
+    func raise(percentIncrease : Double) -> Double
+    {
+        self.salary += self.salary * (percentIncrease / 100)
+        return self.salary
+    }
+}
+
+// Test cases
+var job1 = Job(title: "Developer", salary: 30, salaryIsPerHour: true)
+
+println(job1.calculateIncome(200))
+println(job1.raise(15))
+println(job1.calculateIncome(200))
+
+class Person
+{
+    var firstName : String
+    var lastName : String
+    var age : Int
+    var job : Job
+    var spouse : Person
+    
+    init(firstName : String, lastName : String, age : Int, job : Job, spouse : Person)
+    {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.age = age
+        self.job = job
+        self.spouse = spouse
+    }
+    
+    
+}
+
+class Family
+{
+    
+}
