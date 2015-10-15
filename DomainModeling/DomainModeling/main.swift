@@ -177,5 +177,59 @@ println(Mary.toString())
 
 class Family
 {
+    var members : [Person]
     
+    init(members : [Person])
+    {
+        var valid : Bool = false
+        
+        for var index = 0; index < members.count; index++
+        {
+            if members[0].age > 21
+            {
+                valid = true
+            }
+        }
+        
+        if valid == true
+        {
+            self.members = members
+        }
+        else
+        {
+            println("Family is not valid")
+            self.members = []
+        }
+    }
+    
+    // Returns combined income of all family members
+    func householdIncome() -> Double
+    {
+        var result : Double = 0
+        
+        for var index = 0; index < self.members.count; index++
+        {
+            var currentJob : Job? = members[index].job
+            
+            if currentJob != nil
+            {
+                result += currentJob!.salary
+            }
+        }
+        
+        return result
+    }
+    
+    // Appends new child with age of 0 with given name to family list
+    func haveChild(firstName : String, lastName : String)
+    {
+        println("\(firstName) \(lastName) is born! Congrats!")
+        members.append(Person(firstName: firstName, lastName: lastName, age: 0, job: nil, spouse: nil))
+    }
 }
+
+// Test cases
+var family1 = Family(members: [Bob, Mary])
+
+println(family1.householdIncome())
+family1.haveChild("Clyde", lastName: "Smith")
