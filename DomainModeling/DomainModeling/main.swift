@@ -52,10 +52,17 @@ struct Money
 // Test cases
 var money1 = Money(amount: 15, curr: Currency.USD);
 var money2 = Money(amount: 10, curr: Currency.CAN);
+var money3 = Money(amount: 5, curr: Currency.GBP);
+var money4 = Money(amount: 12, curr: Currency.EUR);
 
+println("Money test cases")
 println(money1.convert(Currency.EUR))
 println(money2.convert(Currency.GBP))
+println(money3.convert(Currency.CAN))
+println(money4.convert(Currency.USD))
 println(money1.mathOperation("add", otherMoney: money2))
+println(money2.mathOperation("subtract", otherMoney: money3))
+println(money1.mathOperation("add", otherMoney: money4))
 println(money2.mathOperation("subtract", otherMoney: money1))
 
 class Job
@@ -102,10 +109,15 @@ class Job
 
 // Test cases
 var job1 = Job(title: "Developer", salary: 30, salaryIsPerHour: true)
+var job2 = Job(title: "Designer", salary: 50000, salaryIsPerHour: false)
 
+println("Job test cases")
 println(job1.calculateIncome(200))
 println(job1.raise(15))
 println(job1.calculateIncome(200))
+println(job2.calculateIncome(nil))
+println(job2.raise(10))
+println(job2.calculateIncome(nil))
 
 class Person
 {
@@ -170,6 +182,7 @@ class Person
 }
 
 // Test cases
+println("Person test cases")
 var Bob = Person(firstName: "Bob", lastName: "Smith", age: 45, job: nil, spouse: nil)
 var Mary = Person(firstName: "Mary", lastName: "Smith", age: 43, job: job1, spouse: Bob)
 
